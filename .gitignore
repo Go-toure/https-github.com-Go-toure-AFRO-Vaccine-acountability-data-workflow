@@ -9,7 +9,7 @@ data/raw/
 data/processed/
 data/final/*repository*.csv
 logs/
-reports/qc_issues.csv
+reports/
 __pycache__/
 *.pyc
 ~$*.xlsx
