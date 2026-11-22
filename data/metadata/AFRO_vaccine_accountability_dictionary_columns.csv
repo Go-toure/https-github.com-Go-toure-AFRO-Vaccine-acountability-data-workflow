@@ -1,0 +1,51 @@
+column,type,description,file
+country,character,Country name (config/forms.csv),afro_vaccine_accountability_repository.csv
+iso3,character,ISO3 country code,afro_vaccine_accountability_repository.csv
+form_id,integer,ONA form id the record comes from,afro_vaccine_accountability_repository.csv
+record_id,character,ONA record id (_id); unique per report,afro_vaccine_accountability_repository.csv
+visit_date,IDate,Date of the report (see date_source),afro_vaccine_accountability_repository.csv
+date_source,character,form = date typed in the form was plausible; submission_time = replaced by the ONA submission date,afro_vaccine_accountability_repository.csv
+year,integer,Year of visit_date,afro_vaccine_accountability_repository.csv
+month,character,Month of visit_date (YYYY-MM),afro_vaccine_accountability_repository.csv
+epi_week,character,ISO week of visit_date,afro_vaccine_accountability_repository.csv
+state,character,Standard state name (AFRO administrative data),afro_vaccine_accountability_repository.csv
+lga,character,Standard LGA / district name (AFRO administrative data),afro_vaccine_accountability_repository.csv
+ward,character,Ward as typed in the form,afro_vaccine_accountability_repository.csv
+geo_match,character,"How state/LGA were matched: override, exact, fuzzy, state_only, unmatched",afro_vaccine_accountability_repository.csv
+state_raw,character,State as typed in the form,afro_vaccine_accountability_repository.csv
+lga_raw,character,LGA as typed in the form,afro_vaccine_accountability_repository.csv
+agency,character,Agency of the reporting officer,afro_vaccine_accountability_repository.csv
+supervisor_designation,character,Designation of the reporting officer,afro_vaccine_accountability_repository.csv
+vaccine_type,character,"Vaccine (nOPV2, IPV, mOPV2, bOPV2, fIPV_nOPV2; NOT STATED if blank)",afro_vaccine_accountability_repository.csv
+day_activity,character,"Campaign day / activity (D1..D5, Mopup, DOPV-1, ...)",afro_vaccine_accountability_repository.csv
+submission_time,POSIXct,ONA submission time (UTC),afro_vaccine_accountability_repository.csv
+form_version,character,Version of the ONA form used (newer versions have the detail_* fields),afro_vaccine_accountability_repository.csv
+lat,logical,Latitude (NA when invalid),afro_vaccine_accountability_repository.csv
+lon,logical,Longitude (NA when invalid),afro_vaccine_accountability_repository.csv
+gps_valid,logical,TRUE when the GPS point is within range and not 0/0,afro_vaccine_accountability_repository.csv
+vials_received,integer,"Vials received at LGA level -- only for valid records (both counts 0-5,000 and returned <= received), else NA",afro_vaccine_accountability_repository.csv
+vials_returned,integer,Vials returned by the teams -- same rule. The exact meaning of 'returned' is to be confirmed with the form owner: do not present 100 - pct_returned as 'vials not returned' before that,afro_vaccine_accountability_repository.csv
+vials_difference,integer,vials_received - vials_returned (valid records only),afro_vaccine_accountability_repository.csv
+pct_returned,numeric,100 * vials_returned / vials_received (valid records only),afro_vaccine_accountability_repository.csv
+vials_valid,logical,"TRUE when both vial counts are filled, within 0-5,000 and returned <= received",afro_vaccine_accountability_repository.csv
+vials_filled,logical,TRUE when both vial counts are filled (whatever their value),afro_vaccine_accountability_repository.csv
+vials_returned_gt_received,logical,TRUE when returned > received (an inconsistent report; counts left out of the totals),afro_vaccine_accountability_repository.csv
+batch_match,logical,"TRUE when the returned batch number equals the received batch number, FALSE when different, NA when one is blank",afro_vaccine_accountability_repository.csv
+detail_population,integer,Detail field (newer form only): population,afro_vaccine_accountability_repository.csv
+detail_vaccine_issued,integer,Detail (newer form only): vaccine issued,afro_vaccine_accountability_repository.csv
+detail_additional_issued,integer,Detail: additional vaccine issued,afro_vaccine_accountability_repository.csv
+detail_usable_vials,integer,Detail: usable vials,afro_vaccine_accountability_repository.csv
+detail_unusable_vials,integer,Detail: unusable vials,afro_vaccine_accountability_repository.csv
+detail_empty_vials,integer,Detail: empty vials,afro_vaccine_accountability_repository.csv
+detail_distorted_vials,integer,Detail: distorted vials,afro_vaccine_accountability_repository.csv
+detail_broken_damage_vials,integer,Detail: broken / damaged vials,afro_vaccine_accountability_repository.csv
+detail_target_immunised,integer,Detail: target immunised,afro_vaccine_accountability_repository.csv
+detail_syr_0_5ml_issued,integer,Detail: 0.5 ml syringes issued,afro_vaccine_accountability_repository.csv
+detail_syr_0_5ml_used,integer,Detail: 0.5 ml syringes used,afro_vaccine_accountability_repository.csv
+detail_syr_5ml_issued,integer,Detail: 5 ml syringes issued,afro_vaccine_accountability_repository.csv
+detail_syr_5ml_used,integer,Detail: 5 ml syringes used,afro_vaccine_accountability_repository.csv
+detail_safetybox_issued,integer,Detail: safety boxes issued,afro_vaccine_accountability_repository.csv
+detail_safetybox_used,integer,Detail: safety boxes used,afro_vaccine_accountability_repository.csv
+detail_diluents_issued,integer,Detail: diluents issued,afro_vaccine_accountability_repository.csv
+detail_usable_diluents,integer,Detail: usable diluents,afro_vaccine_accountability_repository.csv
+detail_diluents_returned,integer,Detail: diluents returned,afro_vaccine_accountability_repository.csv

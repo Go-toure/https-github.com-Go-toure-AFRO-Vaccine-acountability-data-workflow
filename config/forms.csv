@@ -1,0 +1,2 @@
+form_id,country,iso3,name,token_env,min_date,enabled
+829,Nigeria,NGA,Vaccine accountability,ONA_API_TOKEN_NIE,2020-01-01,TRUE

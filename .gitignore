@@ -1,0 +1,17 @@
+# secrets
+config/secrets.env
+config/secrets.env.txt
+*.env
+*.env.txt
+secrets*
+# data and generated files (the small summary tables in data/final/ and the dictionary in data/metadata/ ARE tracked)
+data/raw/
+data/processed/
+data/final/*repository*.csv
+logs/
+reports/qc_issues.csv
+__pycache__/
+*.pyc
+~$*.xlsx
+.Rhistory
+.RData
